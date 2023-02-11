@@ -1,4 +1,29 @@
-<script setup lang="ts">
+<script lang="ts">
+
+export default {
+  name: "App",
+  data() {
+    return {
+      screenWidth: 0,
+    };
+  },
+  mounted() {
+    this.updateScreenWidth();
+    this.onScreenResize();
+  },
+  methods: {
+    onScreenResize() {
+      window.addEventListener("resize", () => {
+        this.updateScreenWidth();
+      });
+    },
+    updateScreenWidth() {
+      this.screenWidth = window.innerWidth;
+    },
+  },
+};
+
+const test = false;
 
 </script>
 
@@ -16,10 +41,11 @@
       <h3 style="color: white; font-weight: bold;">
         Rejoignez l'aventure Soli'Breizh
       </h3>
+      
     </div>
     <nav>
       <RouterLink to="/">Accueil</RouterLink>
-      <RouterLink to="/membres">équipage</RouterLink>
+      <RouterLink to="/crew">équipage</RouterLink>
       <RouterLink to="/contact">Contact</RouterLink>
     </nav>
   </div>
@@ -50,20 +76,22 @@ h3 {
 {
   display: flex;
   justify-content: center;
+  height: 80vh;
+
 }
 
 nav {
   width: 100%;
-  font-size: 12px;
+  font-size: 18px;
   text-align: center;
-  margin-top: 2rem;
+  margin: 1rem;
 }
 
 nav a.router-link-exact-active {
   color: white;
 }
 
-nav a:visited
+nav a:visited, nav a:link
 {
   color: white;
 }
@@ -82,7 +110,18 @@ nav a:first-of-type {
   border: 0;
 }
 
-@media (min-width: 1024px) {
+header{
+  display: flex;
+  place-items: center;
+}
+
+header .wrapper {
+  display: flex;
+  place-items: flex-start;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 920px) {
   header {
     display: flex;
     place-items: center;
@@ -92,18 +131,8 @@ nav a:first-of-type {
     display: flex;
     place-items: flex-start;
     flex-wrap: wrap;
-  }
-
-  nav {
-    margin-left: -1rem;
-    font-size: 1rem;
-
-    padding: 1rem 0;
-    margin-top: 1rem;
-  }
+    height: 50vh;
+  }  
 }
 
-@media (min-width: 1024px) {
-  
-}
 </style>
