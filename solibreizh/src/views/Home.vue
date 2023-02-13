@@ -23,7 +23,23 @@
 <template>
   <main>
     <div class="sectionCustom">
-      <h3>Soli'Breizh X Europ'Raid</h3>
+      <h2 style="text-align: center;">Soli'Breizh X Europ'Raid</h2>
+      <div style="display: flex; align-items: center; justify-content: center; font-weight: bold;">
+        <img
+        alt="logo"
+        class="logo"
+        width="100"
+        src="@/assets/SoliBreizh.png"
+
+      />
+      X
+      <img
+        alt="logo"
+        class="logo"
+        width="100"
+        src="@/assets/Logo-EuropRaid.png"
+      />
+      </div>
       <p>
         Du 29 juillet au 19 août 2023 aura lieu l'EuropRaid, un raid humanitaire en Europe dans lequel chaque équipage voyage en Peugeot 205. 
         Lors de cet événement, nous devons avoir au départ 70 kg de fourniture humanitaire à bord de la voiture, le tout sera distribué à une population dans le besoin. 
@@ -61,17 +77,17 @@
       </p>
       <img src="@/assets/itineraire-2022.png" class="itin"/>
     </div>
-    <div class="sectionCustom">
-      <p>
-        Nous participons à cet événement au nom de notre association, Soli’Breizh.
-        Cette association a pour but de permettre à ses membres de participer à des
-        événements solidaires/humanitaires, chaque membre résidant en Bretagne.
-      </p>
-    </div>
   </main>
 </template>
 
 <style>
+
+h2 {
+  text-decoration: underline;
+  margin-left: 10px;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
 
 .listKey{
   display: flex;
@@ -97,17 +113,27 @@
 .sectionCustom{
   background-color: #08A36D;
   color: white;
-  padding: 2em;
+  padding: 1em;
 
 }
 
 .itin{
   width: 35vw;
+}
 
+.logo {
+  margin: 0px 10px 10px 10px;
 }
 
 .flexSection{
   display: flex;
+  justify-content: space-around;
+}
+
+.flexSection p {
+  display: flex;
+  align-items: center;
+  width: 45vw;
 }
 
 @property --numKm {

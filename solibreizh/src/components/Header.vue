@@ -34,8 +34,6 @@ const test = false;
         alt="logo"
         class="logo"
         src="@/assets/SoliBreizh.png"
-        width="125"
-        height="125"
       />
       <h1 style="color: white; font-weight: bold;">Soli'Breizh</h1>
       <h3 style="color: white; font-weight: bold;">
@@ -45,7 +43,7 @@ const test = false;
     </div>
     <nav>
       <RouterLink to="/">Accueil</RouterLink>
-      <RouterLink to="/crew">équipage</RouterLink>
+      <RouterLink to="/crew">Équipage</RouterLink>
       <RouterLink to="/contact">Contact</RouterLink>
     </nav>
   </div>
@@ -65,6 +63,8 @@ h3 {
 .logo {
   display: block;
   margin: 0 auto 2rem;
+  width: 20vh;
+  height: 20vh;
 }
 
 .greetings h1,
